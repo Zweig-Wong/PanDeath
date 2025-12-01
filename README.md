@@ -2,7 +2,6 @@
 
 <h4 align="center">A streamlined framework for classifying cancer samples into programmed cell death (PCD) subtypes</h4>
 
----
 
 ## Table of Contents
 
@@ -17,7 +16,6 @@
 * [Publication](#publication)
 * [Maintainers](#maintainers)
 
----
 
 ## Introduction
 
@@ -39,7 +37,6 @@ These subtypes exhibit distinct genomic alterations, cellular stresses, malignan
 
 To enable seamless application of this framework to new datasets, we developed a supervised classifier that robustly assigns samples to the five PCD subtypes. The present pipeline provides an implementation of this classifier.
 
----
 
 ## Quickstart Guide
 
@@ -58,11 +55,10 @@ Make sure the RNA-seq expression matrix meets the following requirements:
 3. **TPM-quantified** and **log2-normalized** 
 4. **Robust-scaled** (if your data includes multiple cancers, please apply robust scaling within each cancer type)
 
-> Example PCD expression matrices for the TCGA cohort, CPTAC cohort, and the pan-ICI cohort (as used in our paper) were provided in the `Data/` folder. 
+> Example PCD expression matrices for the TCGA cohort, CPTAC cohort, and the pan-ICI cohort (as used in our paper) are provided in the `Data/` folder. 
 
 > The notebook `1-Infer_PCD_subtype.ipynb` includes helper code for preprocessing if needed.
 
----
 
 ## Workflow for predicting PCD Subtypes
 
@@ -98,7 +94,6 @@ Run `3-Concordance.ipynb`
 * `Confusion_matrix.png` — Confusion matrix
 * `ROC.png` — Receiver Operating Curves for each subtype
 
----
 
 ## Publication
 
@@ -106,7 +101,6 @@ Run `3-Concordance.ipynb`
 
 > *⚠️ Example data and the predictive model will be released upon publication.*
 
----
 
 ## Maintainers
 
