@@ -10,7 +10,10 @@
 * [Quickstart Guide](#quickstart-guide)
   * [Setup](#setup)
   * [Required Input Format](#required-input-format)
-  * [Workflow for predicting PCD Subtypes](#workflow-predicting-pcd-subtypes)
+* [Workflow for predicting PCD Subtypes](#workflow-for-predicting-pcd-subtypes)
+  * [Step 1: Infer PCD Subtypes](#step-1-infer-pcd-subtypes)
+  * [Step 2: Compute ssGSEA Scores for the Four PCD Modes](#step-2-compute-ssgsea-scores-for-the-four-pcd-modes)
+  * [Step 3 (Optional): Evaluate Concordance with NMF-derived Subtypes](#step-3-optional-evaluate-concordance-with-nmf-derived-subtypes)
 * [Publication](#publication)
 * [Maintainers](#maintainers)
 
@@ -46,7 +49,6 @@ To enable seamless application of this framework to new datasets, we developed a
 * All required dependencies are listed in each script.
 * **Python ≥ 3.0** and **R ≥ 4.0** are required.
 
----
 
 ### Required Input Format
 
@@ -54,16 +56,17 @@ Make sure the RNA-seq expression matrix meets the following requirements:
 1. **Tab-separated file** (`.tsv`)
 2. **Samples** as rows and **genes (HUGO symbols)** as columns
 3. **TPM-quantified** and **log2-normalized** 
-4. **Robust-scaled** (if your dataset includes multiple cancer types, please apply robust scaling within each cancer type)
+4. **Robust-scaled** (if your data includes multiple cancers, please apply robust scaling within each cancer type)
 
 > Example PCD expression matrices for the TCGA cohort, CPTAC cohort, and the pan-ICI cohort (as used in our paper) were provided in the `Data/` folder. 
+
 > The notebook `1-Infer_PCD_subtype.ipynb` includes helper code for preprocessing if needed.
 
 ---
 
-### Workflow for predicting PCD Subtypes
+## Workflow for predicting PCD Subtypes
 
-#### **Step 1 — Infer PCD Subtypes**
+### **Step 1: Infer PCD Subtypes**
 
 Run `1-Infer_PCD_subtype.ipynb`
 
@@ -73,7 +76,7 @@ Run `1-Infer_PCD_subtype.ipynb`
 * `Prediction_probability.png` — Bar plots of subtype probability for each sample.
 
 
-#### **Step 2 — Compute ssGSEA Scores for the Four PCD Modes**
+### **Step 2: Compute ssGSEA Scores for the Four PCD Modes**
 
 Run `2-PCD_score.R`
 
@@ -83,7 +86,7 @@ Run `2-PCD_score.R`
 * `CD-X_Score.png` — Boxplots showing PCD mode scores across subtypes.
 
 
-#### **Step 3 (Optional) — Evaluate Concordance with NMF-derived Subtypes**
+### **Step 3 (Optional): Evaluate Concordance with NMF-derived Subtypes**
 > Useful for internal benchmarking or when ground-truth labels are available.
 
 Run `3-Concordance.ipynb`
